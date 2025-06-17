@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>배열 함수</title>
+</head>
+<body>
+    <h1>배열 함수</h1>
+    <script>
+/*         // [배열에 특정 요소 찾기(탐색)] =====================================
+        // [문법]
+        // 배열.index0f(요소, from)   
+                        :인덱스 from부터 시작해서 요소 탐색, 
+                        :있으면 인덱스 리턴, 없으면 -1 리턴
+        // 배열.lastIndex0f(요소, 시작 인덱스)
+        //              : 마지막 인덱스부터 요소 탐색
+                        : 있으면 인덱스 리턴, 없으면 -1 리턴
+        // 배열.includes(요소, from)
+                        : 인덱스 from부터 시작해서 요소 탐색
+                        : 있으면 true 리턴, 없으면 false 리턴 
+================================================================================
+        */
+
+        arr = [1, 10, false, NaN, null, 10];
+        
+        console.log('[있는 값] 10을 찾아라!!');
+        console.log('indexOf : ', arr.indexOf(10)); // 1
+        console.log('lastIndexOf : ', arr.lastIndexOf(10)); // 5
+        console.log('includes : ', arr.includes(10)); // true
+
+        console.log('[없는 값] 2를 찾아라!!');
+        console.log('indexOf : ', arr.indexOf(2)); // -1
+        console.log('lastIndexOf : ', arr.lastIndexOf(2)); // -1
+        console.log('includes : ', arr.includes(2)); // false
+
+        console.log('[있는 값] 논리값 false를 찾아라!!');
+        console.log('indexOf : ', arr.indexOf(false)); // 2
+        console.log('lastIndexOf : ', arr.lastIndexOf(false)); // 2
+        console.log('includes : ', arr.includes(false)); // true
+
+        console.log('[있는 값] null을 찾아라!!');
+        console.log('indexOf : ', arr.indexOf(null)); // 4
+        console.log('lastIndexOf : ', arr.lastIndexOf(null)); // 4
+        console.log('includes : ', arr.includes(null)); // true
+
+        console.log('[있는 값] NaN을 찾아라!!');
+        console.log('indexOf : ', arr.indexOf(NaN)); // -1
+        console.log('lastIndexOf : ', arr.lastIndexOf(NaN)); // -1
+        console.log('includes : ', arr.includes(NaN)); // true (포함하고 있는지 확인용이기 때문에 true)
+
+        /*
+        ===============================
+        NaN
+        : Not a Number
+        : 숫자가 아니다
+        : 수학적으로 말이 안 되는 연산 결과 
+        : 연산 오류, 숫자 변환 실패 등
+        ================================
+        
+        */
+        console.log('Hi' * 5); //NaN
+        console.log('Hi' - 5); //NaN
+        console.log(typeof Number('5'));
+        console.log(typeof Number('Hi'));
+        console.log(Number('Hi'));
+        console.log(typeof NaN); //특정한 값을 가지지는 못함 , 타입은 number이지만 
+        console.log(5 == 5); 
+        console.log(5 == '5'); //타입 비교 X 
+        console.log(5 === '5'); //타입 비교 O, 엄격한 비교 
+        console.log(NaN == NaN);  // false
+        console.log(NaN === NaN);  // false
+        var number_one; // snake case
+        var numberOne; // camel case
+
+
+    </script>
+</body>
+</html>

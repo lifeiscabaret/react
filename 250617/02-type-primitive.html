@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>타입(자료형)</title>
+</head>
+<body>
+    <h1>자바스크립트 타입(자료형)</h1>
+    <script>
+        /* 
+        [기본 타입] 기본형: Primitive Type ===============================
+        -number    : 숫자(정수, 실수)
+        -bigint    : 정수 -(2의 53 - 1) ~ (2의 53승 - 1)
+        -string    : 문자열
+        -boolen    : 논리값(true, false)
+        -undefined : 변수 초기화에 사용, 초기화되지 않은 상태
+        
+        << 값 >>
+        -undefined : 변수 초기화에 사용, 초기화되지 않은 상태
+        -null      : 객체 변수 초기화 사용
+        -NaN       : Not a Number
+
+        [참조 타입] 참조 자료형: Reference Type ==================================
+        <<object>>
+        -Object    : key, value 쌍으로 가지는 자료형
+        -Array     : 순서가 있는 값들의 집합(object의 특별한 형태)
+
+        -function  : 함수도 객체 취급
+        ........
+        */
+        // [기본 타입] 기본형 ==============================================
+        // 변수 선언
+        var num;
+        
+        document.write('num >> ', num);
+        document.write('<br>');
+        document.write('num type >> ', typeof num);
+        
+        num = 100;// 초기화
+        document.write('<br><br>num >> ', num);
+        document.write('<br>');
+        document.write('num type >> ', typeof num);
+        
+        num = 100n; //
+        document.write('<br><br>num >> ', num);
+        document.write('<br>');
+        document.write('num type >> ', typeof num);
+        
+        num = 2.5;
+        document.write('<br><br>num >> ', num);
+        document.write('<br>');
+        document.write('num type >> ', typeof num);
+        
+        num = '안녕';
+        document.write('<br><br>num >> ', num);
+        document.write('<br>');
+        document.write('num type >> ', typeof num);
+
+        num = null;
+        document.write('<br><br>num >> ', num);
+        document.write('<br>');
+        document.write('num type >> ', typeof num);
+
+        num = NaN;
+        document.write('<br><br>num >> ', num);
+        document.write('<br>');
+        document.write('num type >> ', typeof num);
+
+
+
+
+    </script>
+
+</body>
+</html>

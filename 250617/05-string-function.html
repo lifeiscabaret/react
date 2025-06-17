@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>문자열 함수</title>
+</head>
+<body>
+    <h1>문자열 함수</h1>
+    <script>
+        const today = 'Good!';
+
+
+        // 문자열 길이 =====================================
+        console.log('문자열 길이 >>' + today.length);
+
+        // 특정 문자 변경: 복사본 =========
+        // - 일치하는 첫 번째만 문자만 변경
+        // - 문자열.replaceAll('old', 'new')
+        console.log(today.replace('o', '🐥'));
+        // - 일치모든 문자 변경
+        // - 일치하는 모든 문자 변경
+        console.log(today.replaceAll('o', '🐥'));
+
+        // 특정 위치의 문자 추출 ==============
+        // 1. 문자열.substring(시작 인덱스, 끝 인덱스)
+        // : 끝 인덱스 제외
+        // : -(마이너스) 인덱스 사용 불가
+        
+        console.log('**substring 함수 **')
+        console.log(today.substring())
+        console.log(today.substring(1,4));        
+        console.log(today.substring(1,-1)); //음수는 0으로 간주        
+        console.log(today.substring(1)); //인덱스 1부터 끝까지
+        
+        console.log('**slice 함수 **')
+        // 2. 문자열.slice(시작 인덱스, 끝 인덱스)
+        // : 끝 인덱스 제외
+        // : -(마이너스) 인덱스 사용 가능
+        // today = 'Good!'
+        console.log(today.slice(1,4));
+        console.log(today.slice(1,-1));
+        console.log(today.slice(-3));
+
+        // 특정 문자 기준으로 분리(쪼개기) =============================
+        // : 배열로 리턴
+        // : 기준으로 사용된 문자는 요소에 없음
+        // today = 'Good!'
+        console.log('** split 함수: 문자열 분리 **')
+        console.log(today.split('d'));
+        console.log('문자열 분리 >>' + today.split('d'));
+
+        // 특정 문자 추가 ==============================================
+        console.log('** padStart 함수: 특정 문자 추가 **')
+        // 문자열.padStart(문자열 전체 길이, '추가할 문자')
+        console.log(today.padStart(10, '*'));
+        
+        // 문자열.padEnd(문자열 전체 길이, '추가할 문자')
+        
+        console.log(today.padEnd(10, '*'));
+
+        // 특정 문자 추가 : true/false 리턴 ==============================================
+        // : 대소문자 구분
+        // today = 'Good!';
+        console.log('** includes 함수: 특정 문자 찾기 **')
+        console.log(today.includes('G'));
+        console.log(today.includes('g'));
+        console.log(today.includes('Go'));
+
+        // 특정 문자의 위치(index) 리턴 ================================
+        // : 있음 - 탐색된 첫 문자의 인덱스 리턴
+        // : 없음 - -1 리턴
+        // today = 'Good!'
+        console.log(today.indexOf('o'));
+        console.log(today.indexOf('d!'));
+        console.log(today.indexOf('hey'));
+
+        // 반복 ================================================
+        console.log(today.repeat(3))
+
+        // 대문자로 변경 ============================================
+        console.log(today.toUpperCase());
+
+        // 소문자로 변경 ============================================
+        console.log(today.toLowerCase());
+
+        // 공백 제거 ================================================
+        console.log('** trim 함수: 공백 제거 **');
+        const say = '  Hi~  ';
+        console.log('|' + say + '|'); 
+        console.log('|' + say.trimStart() + '|'); //왼쪽 공백 제거 
+        console.log('|' + say.trimLeft + '|'); // 양쪽 공백 제거
+
+        console.log('|' + say.trimEnd() + '|');  // 오른쪽 공백 제거
+        console.log('|' + say.trimRight + '|'); // 양쪽 공백 제거
+
+
+        console.log('|' + say.trim() + '|'); // 양쪽 공백 제거
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>템플릿 리터럴: 백틱 사용</title>
+</head>
+<body>
+    <h1>템플릿 리터럴: 백틱 사용</h1>
+    <script>
+        /* 
+        [문자열] ==============================================
+        [템플릿 리터럴] 백틱 사용
+        : 큰따옴표나 작은따옴표 대신 백틱(`)을 사용해서 표현
+        : 작은따옴표와 혼동할 수 있으나, 백틱은 일반적으로 키보드 tab키 위에 있음
+        : ${expression} 표현식에 사용
+        ========================================================
+        */
+
+
+        var name = '홍길동';
+        var age = 25;
+        var message = '저는' + name + '이고, 나이는 '+ age + '세입니다.';
+        console.log(message)
+
+        var message02 = `저는 ${name}이고, 나이는${age}세입니다.`;
+        console.log(message02);
+    </script>
+
+</body>
+</html>

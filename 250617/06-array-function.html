@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>배열 함수</title>
+</head>
+<body>
+    <h1>배열 함수</h1>
+    <script>
+        const even = [2,4,6];
+
+
+        console.log('even', even);
+
+        // [property 추가] =======================
+        // 1) 맨 뒤에 추가
+        even.push(8);
+        console.log(even);
+        
+        even.push(10,12);
+        console.log(even);
+        
+        // 2) 맨 앞에 추가
+        even.unshift(-2);
+        console.log(even);
+        
+        even.unshift(-4, -6);
+        console.log(even);
+
+        // [property 추가] =======================
+        // 1) 맨 뒤에서 삭제 
+        const pop1 = even.pop();
+        console.log('pop1>>', pop1);
+        console.log(even);
+        
+        const pop2 =even.pop()
+        console.log('pop1>>', pop1);
+        console.log(even);
+
+        // 1) 맨 앞에서 삭제
+        const shift1 = even.shift();
+        console.log('shift1 >> ', shift1);
+        console.log(even);
+
+        const shift2 = even.shift();
+        console.log('shift1 >>', shift2);
+        console.log(even);
+
+        // 요소 추출 ================================
+        // [문법] 배열.slice(시작 인덱스, 끝 인덱스)
+        // : 시작 인덱스에서 끝 인덱스 전까지 자른 배열 리턴
+        const odd = [1,3,5,7,9]; 
+        copy_odd = odd.slice(0,2); // 복사본
+        console.log('==슬라이스 후==')
+        console.log('odd >> ', odd); //원본은 그대로!
+        console.log('copy_odd >> ', copy_odd);
+        
+        copy_odd_two = odd.slice(-3); // -3인덱스에서 끝까지 추출
+        console.log('odd >> ', odd); //원본은 그대로!
+        console.log('copy_odd_two >> ', copy_odd_two);
+
+        // 요소 추가 및 삭제 =============================================
+        // splice(스플라이스): 밧줄 가닥을 꼬아 잇다.
+        // [문법] 배열.splice(시작 인덱스, 개수, 추가요소1, 추가요소2);
+        // : 시작 인덱스에서 개수만큼 요소 삭제
+        // const odd = [1,3,5,7,9];
+
+        // 인덱스 1에서 2개의 요소 삭제
+        console.log('[splice 실행 전] odd >>', odd);
+        odd.splice(1,2);
+        console.log('[splice 실행 후] odd >>', odd);
+
+        // [1,7,9]
+        // 인덱스 0에서 2개의 요소를 삭제 후, 그 위치에 '하나', '둘' 추가
+        odd.splice(0,2,'하나','둘');
+        console.log('[요소 삭제, 하나/둘 추가 후] odd >>', odd)
+        
+        // ['하나', '둘', 9]
+        // -1 인덱스 위치에 '셋' 요소 추가
+        odd.splice(-1,0,'셋');
+        console.log(odd);
+
+        // [요소 추가] ======================================
+        // [문법] 배열.concat(요소1, 요소2, 배열, ...)
+        // odd = ['하나', '둘', '셋', 9]
+        concat_odd = odd.concat(11,13); //복사본
+        console.log('concat_odd >>', concat_odd); // 복사본
+        console.log(odd); //원본 그대로! 변경없음!
+        
+        concat_odd_two = odd.concat([2,4],20);
+        console.log('concat_odd >>', concat_odd_two); // 복사본
+
+
+    </script>
+
+</body>
+</html>

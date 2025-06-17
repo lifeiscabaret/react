@@ -1,0 +1,1 @@
+document.writeln('나는 외부파일이야!');
