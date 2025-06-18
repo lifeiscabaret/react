@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[객체]구조 분해 할당</title>
+</head>
+<body>
+    <h1>[객체] 구조 분해 할당</h1>
+    <script>
+        const info = {
+            name: '홍길동',
+            age: 25,
+        };
+        // 함수 정의 =============================
+        /* 
+        ex) [python] 함수 정의
+        def show_info():
+            print()
+            print()
+        
+    
+        */ 
+        // 1) 매개변수: 1개, property 접근
+        // function show_info(args) {
+        //     console.log(`이름: ${args.name}, 나이:${args.age}`);
+
+        // }
+
+        // //  2-1) 매개변수: 객체의 구조 분해 할당
+        // function show_info({name,age}){
+        //     console.log(`🐸이름:${name}, 나이: ${age}`);
+        // }
+
+        // 2-2) 매개변수: 객체의 구조 분해 할당
+        // --> 변수명을 다른 이름으로 지정!!
+        function show_info({name: dear,age: old}) {
+            console.log(`이름: ${dear}, 나이: ${old}`);
+
+        }
+        // 함수 호출 ==================
+        show_info(info);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[조건문] switch문</title>
+</head>
+<body>
+    <h1>[조건문] switch문</h1>
+    <script>
+        /*
+        =================================================
+        [문법]
+        switch(값) {
+            case 값1:
+                명령어;
+                명령어;
+            case 값2:
+                명령어;
+                명령어;
+            default:
+                명령어;
+                명령어;
+        
+        }
+        =================================================
+        */
+
+        var data = 1;
+        var one = 1;
+
+        switch(data){
+            case one:
+                console.log('1이다.');
+                break;
+            case '2':
+                console.log('2이다.');
+                break;
+            case 3.3: //실수 비교 가능(자바스크립트)
+                console.log('3이다.');
+                break;
+            default:
+                console.log('기타...');
+                break;
+        }
+
+    </script>
+</body>
+</html>

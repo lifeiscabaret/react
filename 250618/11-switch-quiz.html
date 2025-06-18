@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Quiz] swich문</title>
+</head>
+<body>
+    <h1>[문제] switch문</h1>
+    <script>
+        /*
+        *[문제]
+        * 나이를 입력받아서, 나이대를 콘솔에 출력
+        * 0~9 : 유년기
+        * 10~19 : 10대
+        * 20~29 : 20대
+        * 30~39 : 30대 
+        * 40~49 : 40대
+        * 50~   : 50대 이상
+        */ 
+
+
+        // switch 문
+
+    var age = Number(prompt("나이를 입력하세요"));
+    var result;
+
+    switch (String(parseInt(age / 10))) {
+        case "0":
+        result = "유년기";
+        break;
+        case "1":
+        result = "10대";
+        break;
+        case "2":
+        result = "20대";
+        break;
+        case "3":
+        result = "30대";
+        break;
+        case "4":
+        result = "40대";
+        break;
+        case "5":
+        result = "50대";
+        break;
+        default:
+        result = "50대 이상";
+    }
+
+    console.log(`${age}살은 ${result}입니다.`);
+        // if 문
+
+    if (age < 10) {
+        result = "유년기";
+    } else if (age < 20) {
+        result = "10대";
+    } else if (age < 30) {
+        result = "20대";
+    } else if (age < 40) {
+        result = "30대"
+    } else if (age < 50) {
+        result = "40대"
+    } else {
+        result = "50대 이상";
+    }
+
+    console.log(`${age}살은 ${result}입니다.`);
+    </script>
+
+</body>
+</html>

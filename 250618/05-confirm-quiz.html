@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Quiz] 확인창🦊</title>
+</head>
+<body>
+    <h1>[Quiz] 확인창🦊</h1>
+    <script>
+        /*
+        *[문제] ========================================
+        * 확인 버튼을 클릭하면, '리턴값은 true(변수)이고, 확인 버튼을 클릭했습니다.'를 콘솔에 출력
+        * 취소 버튼을 클릭하면, '리턴값은 false(변수)이고, 취소 버튼을 클릭했습니다.'를 큰솔에 출력
+        * ====================================================================
+        */
+
+        // 조건이 2개인 if문 ===================
+        // if(조건식) {
+        //     true일 때, 명령문;
+        //     true일 때, 명령문;
+        // } else{
+        //     false일 때, 명령문;
+        //     false일 때, 명령문;
+
+        // }
+        // 선생님 풀이 ===============================================
+        // [방법 1] ///////////////////////////////////////////////////
+        var answer = confirm('정말 삭제하시겠습니까?');
+        
+        // if(answer){
+            //     console.log(`리턴값은 ${answer}이고, 확인 버튼을 클릭했습니다.`);
+            // } else{
+                //     console.log(`리턴값은 ${answer}이고, 취소 버튼을 클릭했습니다.`);
+                // }
+        // [내 풀이]
+        // var ok = '확인';
+        // var cancel = '취소';
+
+        // var result; confirm("버튼을 클릭하세요")
+        //     if(result) {
+        //         result = true;
+        //         console.log(ok + "버튼을 클릭했습니다.");
+        //     } else {
+        //         result = false;
+        //         console.log(cancel +"버튼을 클릭했습니다.");
+        //     }
+        // [방법 2] ////////////////////////////////////////////////
+        // 선생님 풀이 ======================================================
+        if(answer) {
+            var button = '확인';
+        } else {
+            var button = '취소';
+        }
+        var message = `리턴값은 ${answer}이고, ${button} 버튼을 클릭했습니다.`
+        
+        console.log(message);
+        // [내 풀이]
+        // var answer = confirm("정말 삭제하시겠습니까?");
+        // var message = answer ? '확인 버튼을 클릭했습니다.' : '취소 버튼을 클릭했습니다.';
+        // console.log(`리턴값은 ${answer}이고, ${message}`);
+    </script>
+</body>
+</html>
