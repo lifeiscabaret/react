@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[중첩 반복문]</title>
+</head>
+
+<body>
+    <h1>[중첩 반복문]</h1>
+    <script>
+        /*
+        *
+        * while(조건식){
+        *   while(조건식) {
+        * 
+        *  }
+        * }
+        * 
+        * for(초기값; 조건식; 증감식) {
+        *   for(초기값; 조건식; 증감식) {
+        * 
+        *   }
+        * }
+        * 
+        * do {
+        *   do {
+        * 
+        *   } while(조건식);
+        * } while(조건식);
+        * 
+        */
+
+        // [문제] 2~9단 출력  ===============================
+        // : 단과 단 사이에 empty line 추가
+
+        // // 1. 중첩 for문 ////////////////////////////////////////////0
+        // for (let dan = 2; dan <= 9; dan++) {    // 2단부터 9단까지 반복
+        //     for (let i = 1; i <= 9; i++) {        // 1부터 9까지 곱하기
+        //         console.log(`${dan} x ${i} = ${dan * i}`);
+        //     }
+        //     console.log("");  // 단과 단 사이에 한 줄 띄우기
+
+        //}
+        // [선생님 풀이]
+        // for(let i = 2; i < 10; i++) {
+        //     console.log(`***** ${i}단 *****`);
+
+        //     for(let j = 1; j < 10; j++) {
+        //         console.log(`${i} * ${j} = ${i * j}`);
+        //     }
+
+        //     console.log('');
+        // }
+
+        
+        // 2. 중첩 while문 //////////////////////////////////////////
+        // let dan = 2;
+        // while (dan <= 9) {
+        //     let i = 1;
+        //     while (i <= 9) {
+        //         console.log(`${dan} x ${i} = ${dan * i}`);
+        //         i++;
+        //     }
+        //     console.log("");
+        //     dan++;
+        // }
+        // [선생님 풀이]
+        var i = 2;                                    // 초기값
+        
+        while (i < 10) {                               //조건식
+            console.log(`*****${i}단 *****`);
+            
+            let j = 1;                                    // 초기값
+            while (j < 10) {
+                console.log(`${i} * ${j} = ${i * j}`);     // 조건식
+                j++;                                       // 증감식
+            }
+
+            i++;                                     //증감식
+            console.log('');
+        }
+
+    </script>
+</body>
+
+</html>

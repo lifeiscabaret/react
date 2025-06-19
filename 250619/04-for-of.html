@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[반복문] for of 문</title>
+</head>
+<body>
+    <h1>[반복문] for of 문</h1>
+    <script>
+        /*
+        *[문법]========================
+        * : property의 value 순회
+        * : Symbol.iterator property를 가진 반복 가능한 객체에서만 사용 가능
+        * 
+        * for(let 변수 of  객체) {
+        *   명령어;
+        *   명령어;
+        * }
+        * ===================================================
+        */
+
+        // [Array] /////////////////////////////////////////
+        var arr = [1,3,5,7,9];
+
+        for(let value of arr) {
+            console.log(value);
+            
+        }
+
+        // [Object] ///////////////////////////////////////
+        info = {
+            name: '홍길동',
+            age: 25,
+
+        };
+
+        // for(let value of info) { //대문자 Objet는 for of문을 쓸 수 없음. => symbol.operator가 있어야함
+        //     console.log(value);
+        // }
+
+        /////////////////////////////////////////////////
+        console.log(arr);
+        console.log(info);
+        
+
+
+
+    </script>
+</body>
+</html>

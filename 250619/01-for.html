@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[반복문] for문</title>
+</head>
+<body>
+    <h1>[반복문] for문</h1>
+    <script>
+        /*
+        * [문법] ======================
+        * for(초기값, 조건식; 증감식) {
+        *   명령어;
+        *   명령어; 
+        * }
+        */
+
+        var num = 10; //전역변수
+        
+        for (let num=1; num<5; num++) { //let: 지역변수
+            console.log(num);
+        }
+
+        console.log('for문 실행 후 num >>', num);
+    </script>
+
+</body>
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Quiz] swich문</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Quiz] swich문</title>
 </head>
+
 <body>
     <h1>[문제] switch문</h1>
     <script>
@@ -17,56 +19,81 @@
         * 30~39 : 30대 
         * 40~49 : 40대
         * 50~   : 50대 이상
-        */ 
+        */
 
 
-        // switch 문
+        // switch 문 ========================================================
 
-    var age = Number(prompt("나이를 입력하세요"));
-    var result;
+        var age = Number(prompt("나이를 입력하세요"));
+        var result;
+        console.log(`age: ${age}, type:${typeof age}`);
+        console.log(`age/10: ${age / 10}`);
 
-    switch (String(parseInt(age / 10))) {
-        case "0":
-        result = "유년기";
-        break;
-        case "1":
-        result = "10대";
-        break;
-        case "2":
-        result = "20대";
-        break;
-        case "3":
-        result = "30대";
-        break;
-        case "4":
-        result = "40대";
-        break;
-        case "5":
-        result = "50대";
-        break;
-        default:
-        result = "50대 이상";
-    }
+        //[선생님 풀이]
+        // var ageDivision = Math.floor(age/10); 
+        // console.log(`ageDivision: ${ageDivision}`);
+        // switch(ageDivision) {
+            //case "0":
+                 //console.log = "유년기"
 
-    console.log(`${age}살은 ${result}입니다.`);
+        switch (String(parseInt(age / 10))) {
+            case "0": //0~9세
+                result = "유년기";
+                break;
+            case "1":  // 10~19세
+                result = "10대";
+                break;
+            case "2": //20~29세
+                result = "20대";
+                break;
+            case "3": //30~39세
+                result = "30대";
+                break;
+            case "4": //40~49세
+                result = "40대";
+                break;
+            case "5":
+                result = "50대";
+                break;
+            default:
+                result = "50대 이상";
+        }
+
+        console.log(`${age}살은 ${result}입니다.`);
+
         // if 문
+        if (age < 10) {
+            result = "유년기";
+        } else if (age < 20) {
+            result = "10대";
+        } else if (age < 30) {
+            result = "20대";
+        } else if (age < 40) {
+            result = "30대"
+        } else if (age < 50) {
+            result = "40대"
+        } else {
+            result = "50대 이상";
+        }
 
-    if (age < 10) {
-        result = "유년기";
-    } else if (age < 20) {
-        result = "10대";
-    } else if (age < 30) {
-        result = "20대";
-    } else if (age < 40) {
-        result = "30대"
-    } else if (age < 50) {
-        result = "40대"
-    } else {
-        result = "50대 이상";
-    }
+        console.log(`${age}살은 ${result}입니다.`);
 
-    console.log(`${age}살은 ${result}입니다.`);
-    </script>
+        // [선생님풀이]
+        if (age >=0 && age <=9) {
+            console.log('유년기');
+        } else if (age >=10 && age <=19) { // 10~19세
+            console.log('10대');
+        } else if (age >=20 && age <=29) {
+            console.log('20대');
+        } else if (age >=30 && age <=39){
+            console.log('30대');
+        } else if (age >= 40 && age <= 49) {
+            console.log('40대');
+        } else {
+            console.log('50대 이상');
+        }
+        </script>
 
 </body>
+
 </html>

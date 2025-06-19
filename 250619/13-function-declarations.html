@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Function Declarations]</title>
+</head>
+<body>
+    <h1>[Function Declarations] 함수 선언식</h1>
+    <script>
+        //// 2. 함수 호출 /////////////////////////////////////////////
+        showInfo('홍길동', 35);
+        showInfo('박보검');
+        showInfo();
+        showInfo(2,4,6,8);
+
+        
+        //// 1. 함수 정의: 매개변수 있음, 리턴 없음
+        //// [특징]
+        //// - 매개변수와 인수의 자료형이 동일한지 검사하지 않음
+        //// - 매개변수의 개수와 인수의 개수가 같은지 검사하지 않음
+        //// - 매개변수의 개수가 인수의 개수보다 적으면, undefined로 저장
+        ////////////////////////////////////////////////////////////////
+        function showInfo(name,age) {
+            console.log(`이름: ${name}, 나이:${age}`);
+            console.log('===================================');
+        }
+        ///////////////////////////////////////////////////////////////
+
+
+
+
+    </script>
+</body>
+</html>

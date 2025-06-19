@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[반복문] while문: 무한 루프 구현</title>
+</head>
+<body>
+    <h1>[반복문] while문: 무한 루프 구현</h1>
+    <script>
+        var num = 1;
+
+        while(true){  // 조건이 늘 true인 상태, 초기값은 변수에 설정되 값 
+            console.log(num);
+
+            // 탈출 조건
+            if(num == 5){
+                break;
+            }
+
+            num++;
+        }
+    </script>
+</body>
+</html>

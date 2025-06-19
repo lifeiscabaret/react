@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[반복문] do~while문</title>
+</head>
+
+<body>
+    <h1>[반복문] do~while문</h1>
+    <script>
+        /*
+        *[문법] ===================
+        *초기값;
+        *
+        * do {
+        *   명령문;
+        *   증감식;
+        * } while(조건식);
+        * 
+        * 조건에 상관없이, 반복문 최소 1회 실행
+        * ==================================
+        */
+        // [while문] ///////////////////////////////
+        console.log('** while문 **');
+
+        var num = 5;        // 초기값
+
+        while (num < 5) {    // 조건식
+            console.log(num); 
+            num++;            // 증감식 
+
+        }
+
+        
+        
+        console.log('while 실행 후 num :', num);
+        
+        // [do~while문] /////////////////////////////
+        var num = 5;                 //초기값
+        
+        do {
+            console.log(num)
+            num++;                  //증감식
+        } while (num < 5);          //조건식
+
+        console.log('do~while문 실행 후 num >>', num);
+    </script>
+</body>
+
+</html>
