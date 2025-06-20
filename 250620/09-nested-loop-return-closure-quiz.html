@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문제] 클로저</title>
+</head>
+
+<body>
+    <h1>[문제] 클로저</h1>
+    <script>
+        //// count 값이 1증가 되도록 출력
+        //// [함수 정의] ///////////////////////////////////////////////
+        function outer(start) {
+            let count = start;
+
+
+            function inner() {
+                count++;
+                console.log(count);
+            }
+            return inner;
+        }
+
+        //// [함수 호출] //////////////////////////////////////////////
+        const result = outer(5); // 5
+        result() //6
+        result() //7
+        result() //8
+
+        const increment = outer(100); //100
+        increment() // 101
+
+        const num = outer(10); //10
+        num(); // 11
+
+        console.log('** 실행 종료 **');
+    </script>
+</body>
+
+</html>

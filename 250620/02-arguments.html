@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Arguments]</title>
+</head>
+
+<body>
+    <h1>Arguments</h1>
+    <script>
+        //// 1. 함수 정의 /////////////////////////////////////////////
+        function avg() {
+            console.log('arguments >> ', arguments);
+            console.log('arguments 길이 >> ', arguments.length);
+
+            var total = 0;
+
+            // 반복문 ==================================================
+            // [일반 for문]
+            // for(let i=0; i<arguments.length; i++) {
+            //     console.log(arguments[i]);
+            //     total = total +arguments[i];                
+            // }
+
+
+            // [for of문]
+            for (let value of arguments) {
+                console.log(value);
+                total = total + value;
+            }
+
+            console.log('총합 >> ', total);
+
+            //// [평균 구하기]
+            let mean = (total / arguments.length).toFixed(2);
+            return mean;
+        }
+        //// 2. 함수 호출 /////////////////////////////////////////////
+        var result = avg(2, 3, 5);
+        console.log('avg(2,3,5) 호출 결과 >>', result);
+
+        //// [📌 참고 비교: 화살표 함수에서는 arguments 사용 불가!] ////////
+        // 아래 화살표 함수는 arguments를 사용할 수 없습니다!
+        const avgArrow = () => {
+            // console.log(arguments); // ❌ Error: arguments is not defined
+        };
+        // avgArrow(1, 2, 3); // 주석 해제 시 오류 발생!
+    </script>
+</body>
+
+</html>

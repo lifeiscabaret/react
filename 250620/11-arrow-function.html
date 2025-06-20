@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+
+<body>
+    <h1>화살표 함수</h1>
+    <script>
+        /*
+        *[화살표 함수 정의 형태] ====================
+        * 1. 매개변수 1개, 리턴값 있음
+        * 2. 매개변수 없음, 리턴값 없음
+        * 3. 매개변수 1개 , 리턴값 있음, 명령어 여러 개
+        * 4. 매개변수 2개, 리턴값 없음, 명령어 여러 개
+        */
+
+
+        // 1. 매개변수 1개, 리턴값 있음
+        /* [함수 선언식] : 이름이 있는 함수 ===
+        // result = one(10);
+        // console.log(result);
+
+        // function one(args) {
+        //     return `1증가된 값: ${args + 1}`;
+        // }
+        // ======================================
+        */
+
+        //    const one = (args) => {
+        //        return `1증가된 값 : ${args +1}`;
+        //     }
+
+        const one = args => `1 증가된 값: ${args + 1}`; //간략화 버전
+
+        var result = one(10);
+        console.log(result);
+
+        // 2. 매개변수 없음, 리턴값 있음
+        const two = () => '문자열입니다';
+        console.log('two() >>', two());
+
+        // 3. 매개변수 1개, 리턴값 있음, 명령어 여러 개
+        const three = args => { // 소괄호 생략 가능, 중괄호 생략 X, return 생략 X => 리턴 하나일때만 가능
+            // 주의: 중괄호 {}를 쓰는 경우 return을 반드시 명시해야 함!
+            // 단일 표현식일 경우에는 () => 표현식  형식으로 return도 생략 가능
+
+            let num = args + 1;
+            return '1증가된 값 : ' + num;
+        }
+
+        var result_three = three(100);
+        console.log('three(100)>>', result_three);
+
+        // 4. 매개변수 2개, 리턴값 없음, 명령어 여러 개
+        const four = (a = 0, b = 0) => {
+            let result = a + b;
+            console.log('덧셈 결과 >>', result);
+        };
+
+        four(2, 4);
+        four();
+
+
+
+    </script>
+</body>
+
+</html>

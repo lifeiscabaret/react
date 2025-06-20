@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest parameter</title>
+</head>
+
+<body>
+    <h1>rest parameter</h1>
+    <script>
+        /*
+        * ====================
+        * [rest parameter]
+        * ... 변수명
+        * ====================
+        */
+
+        //// 1. 함수 정의 //////////////////////////////////
+        function sum(a, b, ...args) {
+            let result = a + b;
+
+            for (let value of args) {
+                result += value;
+            }
+
+            console.log('덧셈 결과 >>', result);
+            console.log('[rest parameter] args >>', args);
+
+        }
+        //// 2. 함수 호출 //////////////////////////////////
+        sum(2, 4);
+        sum(1, 5, 3, 2);
+
+        // 이렇게 호출하면:
+        // a = 1, b = 5, ...args = [3, 2]
+        // → 콘솔 출력:
+        // 덧셈 결과 >> 11
+        // [rest parameter] args >> [3, 4]
+
+
+
+    </script>
+</body>
+
+</html>

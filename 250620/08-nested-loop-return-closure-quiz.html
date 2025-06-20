@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문제] 클로저</title>
+</head>
+
+<body>
+    <h1>[문제] 클로저</h1>
+    <script>
+        //// count 값이 1증가 되도록 출력
+        //// [함수 정의] ///////////////////////////////////////////////
+        function outer() {
+            let count = 0;
+
+
+            function inner() {
+                count++;
+                console.log(count);
+            }
+            return inner;
+        }
+        //// [함수 호출] //////////////////////////////////////////////
+        const result = outer();
+        result()
+        result()
+        result()
+
+        const increment = outer();
+        increment()
+
+        const num = outer();
+        num();
+
+        console.log('** 실행 종료 **');
+
+
+
+
+    </script>
+</body>
+
+</html>

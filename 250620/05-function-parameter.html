@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 인수로 함수명 사용 가능</title>
+</head>
+
+<body>
+    <h1>함수 인수로 함수명 사용 가능</h1>
+    <script>
+        //// [함수 정의] ////////////////////////////////////
+        function sum(x, y) {
+            console.log(`${x} + ${y} = ${x + y}`);
+        }
+
+        function sub(x, y) {
+            console.log(`${x} - ${y} = ${x - y}`);
+        }
+
+        function execute(args) {
+            console.log('** execute 함수 실행 시작 **');
+            args(5, 3);
+            // 호출
+            console.log('** execute 함수 실행 종료 **');
+            console.log('****************************');
+        }
+
+        //// [함수 호출] ////////////////////////////////////
+        // execute(5);
+        execute(sum);
+        execute(sub);
+
+
+    </script>
+</body>
+
+</html>

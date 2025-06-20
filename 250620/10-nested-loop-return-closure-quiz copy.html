@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 함수</title>
+</head>
+
+<body>
+    <h1>중첩 함수</h1>
+    <script>
+        //// 1. 함수 정의 /////////////////////////////
+        function loopHello() { // 함수 선언식
+            let count = 0;
+
+            //// inner function ========================
+            let printHello = function () {
+                count++;
+                console.log(`Hello ${count}회 출력`);
+
+                if (count === 10) {
+                    clearInterval(s);
+                }
+            }
+            /*
+            * [setInterval 함수] ----------------------
+            * 특정 코드(함수)를 일정한 시간 간격으로 반복 실행
+            */
+            var s = setInterval(printHello, 1000);
+        }
+
+        //// 2. 함수 호출 ////////////////////////////////
+        loopHello();
+
+
+    </script>
+</body>
+
+</html>
