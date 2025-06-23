@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Lexical Scope] 렉시컬 스코프</title>
+</head>
+
+<body>
+    <h1>[Lexical Scope] 렉시컬 스코프</h1>
+    <script>
+        /*
+        * [Lexical Scope] ***************************************************
+        * : 코드가 어디에 정의되어 있느냐에 따라 접근 가능한 변수가 정해짐
+        * : 실행 시점과 무관
+        *   - 함수가 어디서 실행되었는지는 중요하지 않음
+        *   - 함수 호출 위치는 중요하지 않음
+        * 
+        * Lexical
+        * : 어휘의, 사전의 
+        * *******************************************************************
+        */
+
+
+
+
+        //// [전역 변수] ////////////////////
+        var a = 1;
+        var b = 2;
+        var c = 3;
+
+
+        // 함수 정의
+        function outer() {
+            //// [지역 변수] ///////////////////
+            var b = 20;
+            var c = 30;
+
+            function inner() {
+                var c = 300;
+
+                console.log('>>> [inner() 내 a 접근] a >>', a);
+                console.log('>>> [inner() 내 b 접근] b >>', b);
+                console.log('>>> [inner() 내 c 접근] c >>', c);
+
+            }
+
+            inner()
+
+
+            console.log('[outer() 내 a 접근] a >>', a);
+            console.log('[outer() 내 b 접근] b >>', b);
+            console.log('[outer() 내 c 접근] c >>', c);
+        }
+        // 함수 호출
+        outer();
+
+        console.log('** 실행 완료 **');
+    </script>
+
+</body>
+
+</html>

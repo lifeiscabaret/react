@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[variable-declarations] 변수의 선언 방식(종류)</title>
+    <h1>[variable-declarations] 변수의 선언 방식(종류)</h1>
+
+    <script>
+        console.log('<head> 내 script');
+        var a_head_var = 100; //global variable
+        let a_head_let = 200; //global variable
+        const a_head_const = 300; //globla variable
+
+        // console.log('a_head_var >> ', a_head_var);
+        // console.log('a_head_let >> ', a_head_let);
+        // console.log('a_head_const >> ', a_head_const);
+        console.log('a_body_var >> ', a_body_var);
+        sub(5, 3);
+
+        //// [선언적 함수] ////////////////////////////////////////
+        function sum(num1, num2) {
+            console.log('덧셈 결과 >> ', num1 + num2);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>[variable-declarations] 변수의 선언 방식(종류)</h1>
+    <script>
+        console.log('** <body> 내 script **');
+        console.log('a_head_var >> ', a_head_var);
+        console.log('a_head_let >> ', a_head_let);
+        console.log('a_head_const >> ', a_head_const);
+
+        //// [선언적 함수] ////////////////////////////////////////
+        function sum(num1, num2) {
+            console.log('덧셈 결과 >> ', num1 + num2);
+        }
+
+        // 함수 호출
+        sum('뭉게', '구름');
+
+        // 변수 선언과 동시에 초기화
+        var a_body_var = 1; // global variable
+
+        //// 함수 정의 
+        function sub(num1, num2) {
+            console.log('뺄셈 결과 >>', num1 - num2);
+        }
+
+        console.log('** 실행 종료 **');
+    </script>
+</body>
+
+</html>

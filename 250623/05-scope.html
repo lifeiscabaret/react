@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Scope] 스코프</title>
+</head>
+
+<body>
+    <h1>[Scope] 스코프</h1>
+    <script>
+        //// [Global Scope] ==========================
+        //// 전역 변수 /////////////////////////////
+        var a_one = 1;
+        let a_two = 2;
+        const a_three = 3;
+
+        //// a_var: 전역 변수
+        for (var a_var = 0; a_var < 3; a_var++) {
+            console.log('[for문 내 var 선언된 변수] a_var>> ', a_var);
+        }
+
+        //// a_let: 지역 변수
+        for (let a_let = 0; a_let < 3; a_let++) {
+            console.log('[for문 내 var 선언된 변수] a_var>> ', a_let);
+        }
+
+        if (a_one == 1) {
+            var if_var = 100;
+            console.log('[if문 내 var로 선언된 변수] if_var >>', if_var);
+        }
+
+        if (a_one == 1) {
+            let if_let = 200;
+            console.log('[if문 내 let으로 선언된 변수] if_let>> ', if_let);
+        }
+
+
+        console.log('** 실행 종료 **');
+    </script>
+</body>
+
+</html>

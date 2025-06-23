@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Scope] 스코프</title>
+</head>
+
+<body>
+    <h1>[Scope] 스코프</h1>
+    <script>
+        /*
+        * [scope] 범위 *******************************************
+        * 전역 스코프(golbal scope)
+        * : <script> 내 선언된 변수
+        * : 어디서든지 접근 가능
+        * 
+        * 지역 스코프 (local scope)
+        * : {} 중괄호 블록
+        * : 해당 영역 내에서만 접근 가능
+        * : function-level scope - var
+        *  (함수 수준 스코프)
+        * : block-level scope       - let, const
+        *  (블록 수준 스코프)
+        ********************************************************* 
+        */
+
+        //// [전역 변수] ///////////////////////////////////////
+        var a_global = 1;
+
+        //// 함수 정의 
+        function scope_check() {
+            console.log('[전역 변수] a_global >>', a_global);
+
+            //// [지역 변수] ======================
+            // var a_local_one = 10;
+            let a_local_one = 10;
+            console.log('[지역 변수] a_local_one >>', a_local_one);
+
+            if (a_global == 1) {
+                //// [지역 변수] =====
+                // var a_local_two = 100;
+                let a_local_two = 100;
+                console.log('[지역 변수] if문 내 선언 a_local_two >> ', a_local_two);
+            }
+
+            // console.log('[지역 변수] if문 밖에서 a_local_two>> ', a_local_two);
+
+        }
+        //// 함수 호출
+        scope_check()
+
+        // console.log('[지역 변수] scope_check() 밖에 a_local_one 접근 >>', a_local_one);
+
+
+        console.log('** 프로그램 종료 **');
+
+    </script>
+</body>
+
+</html>

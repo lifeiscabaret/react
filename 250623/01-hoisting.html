@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[HOISTING]</title>
+</head>
+
+<body>
+    <h1>[HOISTING] 호이스팅</h1>
+    <script>
+        /*
+        * [호이스팅] *********************************************
+        * : 인터프리터가 변수와 함수의 메모리 공간을 선언(정의) 전 미리 할당
+        * : 변수 선언과 초기화 분리 (초기화는 런타임)
+        * : var로 선언된 변수
+        * : - 호이스팅 시 undefined로 변수 초기화
+        * : let과 const로 선언된 변수
+        *   - 호이스팅 시 변수 초기화 안 함
+        *   - 접근 시 Error(ReferenceError) 발생
+        *   - 즉, TDZ(Temporal  Dead Zone)에 빠져 참조 시 에러 
+        * 
+        *  cf) TDZ(Temporal Dead Zone)?
+        * : 일시적 사각지대, 임시 데드 존
+        * : JavaScript에서 let, const로 선언된 변수는 초기화되기 전까지 접근 불가능한 시기
+        * : 스코프 진입 ~ 변수 초기화
+        * : 이유 - 변수 사용의 안정성 확보 (초기화 전 접근 방지)
+        **********************************************************************************
+        */
+
+
+        //// [Global Scope] //////////////////////////////////////////////////////////
+        ////  var, let, const
+        ////  변수 선언
+        ////  var 변수명:
+        var a_var;  //// 변수를 만들때만 var를 씀. 변수를 사용할때는 그냥 사용하면 됨.
+        console.log('[초기화 전] a_var >> ', a_var);
+
+        //// 변수 선언과 동시에 초기화
+        var a_hi = '안녕';
+        console.log('[변수 선언과 동시에 초기화] a_hi >> ', a_hi);
+
+        //// 초기화
+        a_var = 100;
+        console.log('a_var >> ', a_var);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Lexical Scope] 렉시컬 스코프</title>
+</head>
+
+<body>
+    <h1>[Lexical Scope] 렉시컬 스코프</h1>
+    <script>
+        var a_one = 5;
+
+        function you() {
+            var a_one = 100;
+            console.log('a_one >>', a_one);
+
+            console.log('>>> [you() 함수] 내 need() 호출 ');
+            need();
+
+            console.log('>>> [you() 함수] 실행 종료 >>>');
+        }
+
+        function need() {
+            console.log('...[need()함수] 내에서 a_one 접근 : ', a_one);
+        }
+
+
+        console.log('you() 호출');
+        you();
+
+        console.log('need() 호출');
+        need();
+
+        console.log('** 실행 완료 **');
+
+
+    </script>
+</body>
+
+</html>
