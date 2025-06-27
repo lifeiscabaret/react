@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순수 JavaScript Page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .main-card button {
+            position: relative;
+            left: -80px;
+            top: -10px;
+        }
+
+        .favorites {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .favorites li {
+            list-style: none;
+        }
+
+        .favorites img {
+            width: 150px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+
+
+
+
+    <script type="text/babel">
+        console.log('처음 배우는 리액트 🎈');
+
+        // h1 JSX element---------------
+        // const title = <h1>1 페이지</h1>;
+
+        // H1 component ----------------------
+        // function H1() {
+        //     return <h1>1 페이지</h1>;
+        // }
+
+        // 화살표 함수 ----------------------
+        const H1 = () => <h1>1 페이지</h1>;
+
+
+        // form JSX element ---------------------
+        // const form = (
+        //     <form action="">
+        //         <input type="text" name="name" id="name" placeholder="귀여운 동물을 입력하세요." />
+        //         <button type="submit">추가</button>
+        //     </form>
+        // );
+
+
+        //Form component -----------------------
+
+        // function Form() {
+        //     return (
+        //         <form action="">
+        //             <input type="text" name="name" id="name" placeholder="귀여운 동물을 입력하세요." />
+        //             <button type="submit">추가</button>
+        //         </form>
+        //     );
+        // }
+
+        // 화살표 함수 ------------------------
+        const Form = () => (
+            <form action="">
+                <input type="text" name="name" id="name" placeholder="귀여운 동물을 입력하세요." />
+                <button type="submit">추가</button>
+            </form>
+        );
+
+
+        // 기존 main-card -> JSX element ------------------------------
+        // const mainCard = (
+        //     <div class="main-card">
+        //         <img src="img/bear.png" alt="bear" width="400px" />
+        //         <button>🐷🐳🐥</button>
+        //     </div>
+        // );
+
+        // MainCard component----------------------------------------------
+
+        // function MainCard() {
+        //     return (
+        //         <div class="main-card">
+        //             <img src="img/bear.png" alt="bear" width="400px" />
+        //             <button>🐷🐳🐥</button>
+        //         </div>
+        //     );
+        // }
+
+
+        // 화살표 함수--------------------------------------------------------
+        const MainCard = ({ src, alt }) => {
+            // JavaScript code...
+            function handleHeartClick() {
+                console, log('하트 버튼 클릭');
+            }
+            function handleHeartMouseOver() {
+                console.log('마우스 스쳐지나감');
+
+            }
+
+            return (
+                <div
+                    className="main-card"
+                    /* [테두리] border: 1px solid red */
+
+                    style={{
+                        backgroundColor: "#0ff",
+                        border: "3px solid #f00"
+                    }}
+                >
+                    <img src={src} alt={alt} width="400px" />
+                    <button
+                        onClicK={handleHeartClick}
+                        onMouseOver={handleHeartMouseOver}
+                    >😉</button>
+                </div>
+            );
+        }
+
+
+
+        // const animalItem = (
+        //     <li>
+        //         <img src="img/bear.png" alt="곰" />
+        //     </li>
+        // );
+
+        // AnimalItem Component-----------------------------------------------
+
+        // function AnimalItem({ src = "img/bear.png", alt = "곰" }) {
+        //     return (
+        //         <li>
+        //             <img src={src} alt={alt} />
+        //         </li>
+        //     );
+        // }
+
+        // 화살표 함수--------------------------------------------------------- 
+        const AnimalItem = ({ src, alt }) => (
+            <li>
+                <img src={src} alt={alt} />
+            </li>
+        );
+
+
+        // 기존 ul element -> JSX element--------------------------------------------
+        // const favorites = (
+        //     <ul className="favorites">
+        //         {animalItem}
+        //         {animalItem}
+        //         {animalItem}
+        //         {animalItem}
+        //     </ul>
+        // );
+
+        // Favorites component-------------------------------------------------------
+
+        // function Favorites() {
+        //     return (
+        //         <ul className="favorites">
+        //             <AnimalItem />
+        //             <AnimalItem />
+        //             <AnimalItem />
+        //             <AnimalItem />
+        //         </ul>
+        //     );
+        // }
+
+        // 화살표 함수------------------------------------------------------
+        const Favorites = () => (
+            <ul className="favorites">
+                <AnimalItem src="img/bear.png" alt="아기 곰" />
+                <AnimalItem src="img/elephant.png" alt="아기 코끼리" />
+                <AnimalItem src="img/fox.png" alt="아기 여우" />
+                <AnimalItem src="img/rabbit.png" alt="아기 토끼" />
+            </ul>
+        );
+
+        // 2개 이상 JSX element를 하나의 JSX element 만들기
+        const app = (
+            <div>
+                {/* title */}
+                <H1 />
+                <Form />
+                <MainCard src="img/bear.png" alt="아기 곰" />
+                <Favorites />
+            </div>
+        );
+
+
+
+
+        // id가 root인 엘리먼트 접근
+        const root = document.querySelector('#root');
+
+        // react를 이용하여 JSX 엘리먼트를 root에 추가
+        ReactDOM.createRoot(root).render(app);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>귀여운 동물들</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+    }
+
+    img {
+      width: 150px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // component 정의 ////////////////////////
+    // 1. H1 component
+    // function H1(props) {
+    //   return (<h1>{props}</h1>);
+    // }
+
+    // h1 JSX element
+    const title = <h1> 귀여운 동물들</h1>
+
+    const animals = [
+      { title: '귀여운 곰돌이', src: 'img/bear.png', alt: '곰' },
+      { title: '귀여운 코끼리', src: 'img/elephant.png', alt: '코끼리' },
+      { title: '귀여운 여우', src: 'img/fox.png', alt: '여우' },
+      { title: '귀여운 토끼', src: 'img/rabbit.png', alt: '토끼' }
+    ];
+
+    const list = (
+      <ul>
+        {animals.map((animal, index) => (
+          <Card key={index} title={animal.title} src={animal.src} alt={animal.alt} />
+        ))}
+      </ul>
+    );
+
+    // 2. Card component
+    function Card({ title, src, alt }) {
+      return (
+        <li>
+          <h6>{title}</h6>
+          <img src={src} alt={alt} />
+        </li>
+      );
+    }
+
+    const app = (
+      <div>
+        {title}
+        {list}
+      </div>
+    );
+
+    const root = document.querySelector('#root');
+
+    ReactDOM.createRoot(root).render(app)
+
+
+
+
+  </script>
+
+</body>
+
+</html>

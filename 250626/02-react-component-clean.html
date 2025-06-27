@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[react] component</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .main-card button {
+            position: relative;
+            left: -80px;
+            top: -10px;
+        }
+
+        .favorites {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .favorites li {
+            list-style: none;
+        }
+
+        .favorites img {
+            width: 150px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+
+
+
+
+    <script type="text/babel">
+        console.log('처음 배우는 리액트 🎈');
+
+        const H1 = (props) => <h1>{props.children}</h1>;
+
+
+        const Form = () => (
+            <form action="">
+                <input type="text" name="name" id="name" placeholder="귀여운 동물을 입력하세요." />
+                <button type="submit">추가</button>
+            </form>
+        );
+
+
+        const MainCard = ({ src, alt }) => {
+            return (
+                <div className="main-card">
+                    <img src={src} alt={alt} width="400px" />
+                    <button>😀</button>
+                </div>
+            );
+        }
+
+        const AnimalItem = ({ src, alt }) => (
+            <li>
+                <img src={src} alt={alt} />
+            </li>
+        );
+
+        const Favorites = () => (
+            <ul className="favorites">
+                <AnimalItem src="img/bear.png" alt="아기 곰" />
+                <AnimalItem src="img/elephant.png" alt="아기 코끼리" />
+                <AnimalItem src="img/fox.png" alt="아기 여우" />
+                <AnimalItem src="img/rabbit.png" alt="아기 토끼" />
+            </ul>
+        );
+
+        // const app = (
+        //     <div>
+        //         <H1 />
+        //         <Form />
+        //         <MainCard src="img/bear.png" alt="아기 곰" />
+        //         <Favorites />
+        //     </div>
+        // );
+
+        function App() {
+            return (
+                <div>
+                    <H1>1 페이지</H1>
+                    <Form />
+                    <MainCard src="img/bear.png" alt="아기 곰" />
+                    <Favorites />
+                </div>
+            );
+
+        }
+
+        const root = document.querySelector('#root');
+
+        ReactDOM.createRoot(root).render(<App />);
+    </script>
+</body>
+
+</html>

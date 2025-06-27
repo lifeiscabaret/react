@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>귀여운 동물들</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+    }
+
+    img {
+      width: 150px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    // component 정의 ////////////////////////
+    // 1. H1 component
+    // function H1(props) {
+    //   return <h1>{props.content}</h1>;
+    // }
+
+    const H1 = (props) => <h1>{props.content}</h1>;
+
+    // 2. Card component
+    // function Card({ title, src, alt }) {
+    //   console.log('title >>', title);
+    //   console.log('src >>', src);
+    //   console.log('alt >>', alt);
+
+    //   return (
+    //     <li>
+    //       <h4>{title}</h4>
+    //       <img src={src} alt={alt} width="300px" />
+    //     </li>
+
+    //   );
+    // }
+
+    const Card = ({ title, src, alt }) => (
+      <li>
+        <h4>{title}</h4>
+        <img src={src} alt={alt} width="300px" />
+      </li>
+
+    );
+
+    // JSX element 생성
+    // const app = (
+    //   <div>
+    //     <H1 content="귀여운 동물들🐯" />
+    //     <ul>
+    //       <Card title="귀여운 곰" src="img/bear.png" alt="아기 곰" />
+    //       <Card title="귀여운 코끼리" src="img/elephant.png" alt="아기 코끼리" />
+    //       <Card title="귀여운 여우" src="img/fox.png" alt="아기 여우" />
+    //       <Card title="귀여운 토끼" src="img/rabbit.png" alt="아기 토끼" />
+    //     </ul>
+    //   </div>
+    // );
+
+    // 화살표 함수
+    const App = () => (
+      <div>
+        <H1 content="귀여운 동물들🐯" />
+        <ul>
+          <Card title="귀여운 곰" src="img/bear.png" alt="아기 곰" />
+          <Card title="귀여운 코끼리" src="img/elephant.png" alt="아기 코끼리" />
+          <Card title="귀여운 여우" src="img/fox.png" alt="아기 여우" />
+          <Card title="귀여운 토끼" src="img/rabbit.png" alt="아기 토끼" />
+        </ul>
+      </div>
+    );
+
+
+
+    // function App() {
+    //   return (
+    //     <div>
+    //       <H1 content="귀여운 동물들🐯" />
+    //       <ul>
+    //         <Card title="귀여운 곰" src="img/bear.png" alt="아기 곰" />
+    //         <Card title="귀여운 코끼리" src="img/elephant.png" alt="아기 코끼리" />
+    //         <Card title="귀여운 여우" src="img/fox.png" alt="아기 여우" />
+    //         <Card title="귀여운 토끼" src="img/rabbit.png" alt="아기 토끼" />
+    //       </ul>
+    //     </div>
+    //   );
+    // }
+    // React로 렌더링된 element를 추가할 HTML element 선택
+    // --> React 컴포넌트를 렌더링할 대상 HTML 요소를 선택
+    const root = document.querySelector('#root');
+
+    // [React Rendering]
+    // JSX 컴포넌트를 #root에 출력(추가)
+    // --> React element를 #root에 렌더링
+
+    ReactDOM.createRoot(root).render(<App />);
+
+  </script>
+</body>
+
+</html>
