@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 함수</title>
+</head>
+
+<body>
+    <h1>배열 함수</h1>
+    <script>
+        const even = [2, 4, 6, 8, 10];
+
+        // [문제 1] ----------------------------------------------
+        // forEach() 함수를 사용하여, 배열 even 요소를 1 증가
+        // 원본이 변경되도록!
+
+        even.forEach((v, i, array) => array[i] = v + 1);
+
+
+
+        console.log(even);
+
+        // [문제 2]------------------------------------
+        // map() 함수를 사용하여, 배열 even 요소를 1 증가
+        // 원본이 변경되도록!
+        // 일반적으로 map()은 새 배열을 반환할 때 사용함 (원본 수정엔 부적합)
+
+        // const increment_even = even.map(value => value + 1);
+
+        const increment_even
+            = even.map((value, index, array) => array[index] = value + 1);
+
+        console.log('increment_even : ', increment_even);
+        console.log('even : ', even);
+
+        even[0] = 100;
+
+        console.log('increment_even : ', increment_even);
+        console.log('even : ', even);
+    </script>
+
+</body>
+
+</html>

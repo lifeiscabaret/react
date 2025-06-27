@@ -1,0 +1,102 @@
+07-component.html
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>[Component] 컴포넌트</title>
+</head>
+
+<body>
+	<h1>[Component] 컴포넌트</h1>
+	<div id="root"></div>
+
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<script type="text/babel">
+		// [함수 정의] ========================================
+		// 1) 함수 선언식
+		// function greeting(name) {
+		//     return `안녕하세요~ ${name} 님`;
+		// }
+
+		// 2) 화살표 함수
+		const greeting = name => `안녕하세요~ ${name} 님`;
+
+		// JSX element
+		const h2 = (
+			<h2>{greeting('박보검')}</h2>
+		);
+		// ====================================================
+
+		// [Component] 1. function component =====================
+		// 1-1. 정의: 함수 선언식
+		// function Card() {
+		//     return <h2>안녕~</h2>;
+		// }
+		//
+		// [문제 1] name 매개변수 추가 후, 호출하여 화면에 표현
+		// function Card(name) {
+		//     return <h2>{name}, 안녕~</h2>;
+		// }
+
+		// [문제 2] 
+		// * 아래와 같은 JSX element일 때, 파라미터 설정 후 호출
+		// * 화살표 함수로도 구현
+		function Card({ name, description }) {
+			// JavaScript 코드
+			return (
+				<div>
+					<h2>{name}, 안녕~</h2>
+					<div>{description}</div>
+				</div>
+			);
+		}
+
+		// 1-2. 정의: 화살표 함수
+		// const Card = () => <h2>안녕~</h2>;
+		// [문제 1]
+		// const Card = (name) => <h2>{name}, 안녕~</h2>;
+		// [문제 2]
+		// const Card = (name, description) => {
+		//     // JavaScript 코드
+		//     return (
+		//         <div>
+		//             <h2>{name}, 안녕~</h2>
+		//             <div>{description}</div>
+		//         </div>
+		//     );
+		// };
+
+
+		/* // 2. 컴포넌트 사용 */
+		// 2-1. 호출: 권장하지 않음
+		const card_one = <Card name="홍길동" description="오늘도 좋은 하루~!" />;
+		// [문제 3] 
+		// * Card 호출하여 card_two에 저장
+		// * card_one과 card_two 화면에 표현하시오.
+		const card_two = <Card name="박보검" description="반가워~" />;
+
+		// 2-2. 
+
+		const app = (
+			<div>
+				{card_one}
+				{card_two}
+			</div>
+		);
+
+		const root = document.querySelector('#root');
+
+		// 렌더링
+		// ReactDOM.createRoot(root).render(card_one);
+		ReactDOM.createRoot(root).render(app);
+	</script>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순수 JavaScript Page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .main-card button {
+            position: relative;
+            left: -80px;
+            top: -10px;
+        }
+
+        .favorites {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .favorites li {
+            list-style: none;
+        }
+
+        .favorites img {
+            width: 150px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>1 페이지</h1>
+    <form action="">
+        <input type="text" name="name" id="name" placeholder="귀여운 동물을 입력하세요.">
+        <button type="submit">추가</button>
+    </form>
+    <div class="main-card">
+        <img src="img/bear.png" alt="bear" width="400px">
+        <button>🐷🐳🐥</button>
+    </div>
+    <ul class="favorites">
+        <li>
+            <img src="img/bear.png" alt="곰">
+        </li>
+        <li>
+            <img src="img/elephant.png" alt="코끼리">
+        </li>
+        <li>
+            <img src="img/fox.png" alt="여우">
+        </li>
+        <li>
+            <img src="img/rabbit.png" alt="토끼">
+        </li>
+    </ul>
+    <script>
+        // 1. 좋아요 버튼 엘리먼트 접근
+        const likeButton = document.querySelector('.main-card button');
+        console.log(likeButton);
+
+        // 2. 좋아요 버튼 클릭했을 때
+        likeButton.addEventListener('click', () => {
+            //// 3. 하트 색 변경
+            likeButton.innerText = '🐱‍🐉🦝🐵';
+
+            //// 4. li 엘리먼트 생성
+            const li = document.createElement('li');
+            console.log('li');
+
+            //// 5. img 엘리먼트 생성
+            const img = document.createElement('img');
+            img.src = 'img/bear.png';
+            img.alt = '곰';
+            console.log('img');
+
+            //// 6. li 자식으로 img 설정(추가)
+            li.appendChild(img);
+
+            //// 7. ul 엘리먼트 접근 
+            const ul = document.querySelector('ul.favorites');
+            console.log(ul);
+
+            //// 8. ul 자식으로 li 추가
+            ul.appendChild(li);
+
+        });
+    </script>
+</body>
+
+</html>

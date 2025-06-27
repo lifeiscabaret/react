@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object 축약 형태</title>
+</head>
+
+<body>
+    <h1>Object 축약 형태</h1>
+    <script>
+        // Object 형태 =============================================
+        // var info = {
+        //     name: '홍길동',
+        //     age: 25,
+        // };
+        // 1. 키와 값의 이름이 같은 경우 =============
+        const name = '박보검';
+        const age = 35;
+
+        // 1-1. 키와 값을 모두 설정
+        // const info = {
+        //     name: name,
+        //     age: age,
+        // };
+
+        // 1-2. 축약 표현: 키와 값을 같다면, 값 생략 가능
+        const info = { name, age };
+
+
+
+        console.log('info >> ', info);
+
+        // 2. 값이 익명 함수일 경우 ========================================
+        // 2-1.
+        // const say = {
+        //     hi: function(){
+        //         console.log('안녕~ 반가워!');
+        //     },
+        // };
+
+        // 2-2. 축약 형태: function 키워드 생략
+        const say = {
+            hi() {
+                console.log('안녕, 반가워~! 😘');
+
+            },
+        };
+        console.log(say);
+        say.hi();
+
+
+    </script>
+</body>
+
+</html>
