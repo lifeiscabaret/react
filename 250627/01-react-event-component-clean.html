@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[react] event</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .main-card button {
+            position: relative;
+            left: -80px;
+            top: -10px;
+        }
+
+        .favorites {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .favorites li {
+            list-style: none;
+        }
+
+        .favorites img {
+            width: 150px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+
+
+
+
+    <script type="text/babel">
+        console.log('처음 배우는 리액트 🎈');
+
+
+        const H1 = (props) => <h1>{props.children}</h1>;
+
+
+
+        const Form = ({ handleSubmit }) => {
+            console.log('Form Component 실행');
+
+            return (
+                <form onSubmit={handleSubmit}>
+                    <input type="text" name="name" id="name" placeholder="귀여운 동물을 입력하세요." />
+                    <button type="submit">추가</button>
+                </form>
+            );
+        }
+
+
+        const MainCard = ({ src, alt, handleHeartClick, }) => {
+            return (
+                <div className="main-card">
+                    <img src={src} alt={alt} width="400px" />
+                    <button onClick={handleHeartClick}>😀</button>
+                </div>
+            );
+        };
+
+        const AnimalItem = ({ src, alt }) => (
+            <li>
+                <img src={src} alt={alt} />
+            </li>
+        );
+
+        const Favorites = ({ favorites }) => {
+            return (
+                <ul className="favorites">
+                    {favorites.map(animal => <AnimalItem src={animal} key={animal} />)}
+
+                </ul>
+            );
+        }
+
+
+        function App() {
+            console.log('**App 실행 **');
+            const animal01 = "img/bear.png";
+            const animal02 = "img/elephant.png";
+            const animal03 = "img/fox.png";
+            const animal04 = "img/rabbit.png";
+
+            const [mainAnimal, setMainAnimal] = React.useState(animal04);
+            const [favorites, setFavorites] = React.useState([animal01, animal02]);
+            const [count, setCount] = React.useState(1);
+
+            function handleSubmit(event) {
+                // 새로고침(refresh) 방지
+                event.preventDefault();
+                console.log(`추가 버튼 클릭! 🐱‍💻 현재 횟수: ${count}`);
+
+                setMainAnimal(animal02);
+
+                setCount(count + 1);
+                console.log('[handelSubmit] count >>', count); // 이전 상태값
+            }
+
+            function handleHeartClick() {
+                console.log('하트 버튼 클릭');
+                setFavorites([...favorites, mainAnimal]);
+            }
+
+            return (
+                <div>
+                    <H1>{count} 페이지</H1>
+                    <Form handleSubmit={handleSubmit} />
+                    <MainCard
+                        src={mainAnimal}
+                        alt="아기 동물"
+                        handleHeartClick={handleHeartClick}
+                    />
+                    <Favorites favorites={favorites} />
+                </div>
+            );
+        }
+
+        const root = document.querySelector('#root');
+
+        ReactDOM.createRoot(root).render(<App />);
+    </script>
+</body>
+
+</html>
